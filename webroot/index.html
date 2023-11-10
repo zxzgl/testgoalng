@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>简陋聊天室</title>
+    <link rel="stylesheet" href="vender/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vender/bootstrap/css/bootstrap-responsive.min.css">
+		<script src="vender/jquery-2.1.4.min.js">
+		<script src="vender/bootstrap/js/bootstrap.min.js"></script>
+		</script>
+		<script src="vender/knockout-3.4.0.js">
+		</script>
+		<script src="vender/jquery.json-2.5.1.min.js">
+		</script>
+		<script data-main="js/main" src="vender/require.js">
+		</script>
+	</head>
+
+	<body>
+
+	<div class="grid-row">
+		<div class="span10">
+			<h3>开始聊天</h3>
+			<form class="well form-horizontal" data-bind="with: editingMessage">
+				<div class="control-group">
+					<label class="control-label" for="inputBody">输入框 :</label>
+					<div class="controls">
+						<textarea style="min-width: 100%" id="code" data-bind="value: body">
+						</textarea>
+						<input type="text" class="code" id="code" placeholder="输入代码">
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls">
+						<a href="#" class="btn pull-right" data-bind="click: $parent.send.bind($parent)">发送</a>
+					</div>
+				</div>
+			</form>
+
+			<h3>消息记录</h3>
+			<div data-bind="foreach: messages">
+				<div>
+					<h3>
+						<!-- ko text: author --><!-- /ko -->
+						:
+					</h3>
+					<pre data-bind="text:body">
+					</pre>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="span3">
+		</div>
+
+	</body>
+</html>

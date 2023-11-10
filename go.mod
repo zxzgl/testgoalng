@@ -1,8 +1,5 @@
-module wxcloudrun-golang
+module aaaaa
 
-go 1.16
+go 1.20
 
-require (
-	gorm.io/driver/mysql v1.1.2
-	gorm.io/gorm v1.21.16
-)
+require golang.org/x/net v0.17.0 // indirect
